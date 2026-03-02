@@ -132,6 +132,42 @@
 				"read-only",
 				"no-worktree"
 			]
+		},
+		"recorder": {
+			"file": "recorder.md",
+			"model": "haiku",
+			"tools": [
+				"Read",
+				"Glob",
+				"Grep",
+				"Bash"
+			],
+			"capabilities": [
+				"ingest",
+				"extract"
+			],
+			"canSpawn": false,
+			"constraints": [
+				"read-only"
+			]
+		},
+		"data-analyst": {
+			"file": "data-analyst.md",
+			"model": "sonnet",
+			"tools": [
+				"Read",
+				"Write",
+				"Edit",
+				"Glob",
+				"Grep",
+				"Bash"
+			],
+			"capabilities": [
+				"analyze",
+				"organize"
+			],
+			"canSpawn": false,
+			"constraints": []
 		}
 	},
 	"capabilityIndex": {
@@ -179,6 +215,18 @@
 		],
 		"patrol": [
 			"monitor"
+		],
+		"ingest": [
+			"recorder"
+		],
+		"extract": [
+			"recorder"
+		],
+		"analyze": [
+			"data-analyst"
+		],
+		"organize": [
+			"data-analyst"
 		]
 	}
 }
